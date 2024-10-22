@@ -1,10 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 import AddTodo from './components/AddTodo/AddTodo';
+import TodoValue from './components/TodoValue/TodoValue';
 
 function App() {
   return (
-    <AddTodo />
+    <>
+      <TodoValue />
+      <TodoValue />
+      <TodoValue />
+      <TodoValue />
+      <AddTodo />
+    </>
   );
 }
 
