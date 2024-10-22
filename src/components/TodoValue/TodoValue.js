@@ -1,7 +1,7 @@
-const TodoValue = () => {
+const TodoValue = ({todo}) => {
     return (
         <div>
-            <span>You need to do this</span>
+            <span>{todo}</span>
             <button>Done</button>
             <button>Delete</button>
         </div>
