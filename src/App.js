@@ -4,10 +4,10 @@ import TodoValue from './components/TodoValue/TodoValue';
 import { useState } from 'react';
 
 function App() {
-  const [todos, setTodos] = useState(["do this1", "do this2", "do this3"]);
+  const [todos, setTodos] = useState([]);
   return (
     <>
-      {todos.map(todo => <TodoValue todo={todo} />)}
+      {todos.map(todo => <TodoValue key={todo.id} todo={todo} todos={todos} setTodos={setTodos}/>)}
       <AddTodo todos={todos} setTodos={setTodos} />
     </>
   );

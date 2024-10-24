@@ -1,8 +1,17 @@
-const TodoValue = ({todo}) => {
+import './TodoValues.css';
+const TodoValue = ({todo, todos, setTodos}) => {
+    const markCompleted = () => {
+        setTodos(todos.map(t => {
+            if (t.id === todo.id) {
+                return {...t, completed: !t.completed}
+            }
+            return t
+        }))
+    }
     return (
         <div>
-            <span>{todo}</span>
-            <button>Done</button>
+            <span className={todo.completed ? "completed" : ''}>{todo.value}</span>
+            <button onClick={() => markCompleted()}>Done</button>
             <button>Delete</button>
         </div>
     )

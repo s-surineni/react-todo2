@@ -4,7 +4,7 @@ const  AddTodo = ({todos, setTodos}) => {
     const [newTodo, setNewTodo] = useState("");
     const handleSubmit = e => {
         e.preventDefault();
-        setTodos([...todos, newTodo]);
+        setTodos([...todos, {value: newTodo, id: crypto.randomUUID(), completed: false}]);
         setNewTodo("");
     }
     return (
