@@ -10,9 +10,9 @@ const TodoValue = ({todo, todos, setTodos}) => {
     }
     return (
         <div className='todo-item'>
-            <input type="checkbox" onClick={() => markCompleted()} />
+            <input type="checkbox" onChange={() => markCompleted()} />
             <span className={todo.completed ? "completed" : ''}>{todo.value}</span>
-            <button>Delete</button>
+            <button className='delete-todo'>x</button>
         </div>
     )
 }

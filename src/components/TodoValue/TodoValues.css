@@ -1,3 +1,13 @@
 .completed {
     text-decoration: line-through;
 }
+
+.todo-item {
+    border-bottom: 1px solid rgb(237, 237, 237);
+}
+
+.delete-todo {
+    color: #af5b5e;
+    background: none;
+    border: none;
+}
