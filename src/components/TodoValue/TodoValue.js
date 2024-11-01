@@ -11,7 +11,7 @@ const TodoValue = ({todo, todos, setTodos}) => {
     return (
         <div className='todo-item'>
             <input type="checkbox" onChange={() => markCompleted()} />
-            <span className={todo.completed ? "completed" : ''}>{todo.value}</span>
+            <div className={`todo-text ${todo.completed ? "completed" : ''}`}>{todo.value}</div>
             <button className='delete-todo'>x</button>
         </div>
     )

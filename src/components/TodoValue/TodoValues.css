@@ -5,8 +5,12 @@
 .todo-item {
     border-bottom: 1px solid rgb(237, 237, 237);
     font-size: 24px;
+    padding: 15px 15px 15px 0px;
 }
-
+.todo-text {
+    display: inline-block;
+    width: 90%;
+}
 .delete-todo {
     color: #af5b5e;
     background: none;
