@@ -11,14 +11,14 @@ const  AddTodo = ({todos, setTodos}) => {
     return (
         <form onSubmit={handleSubmit}>
             <div>
-                <label htmlFor="new-todo">Add todo</label>
+                <label className="new-todo-label" htmlFor="new-todo">Add todo</label>
             </div>
             <input id="new-todo"
                 className='new-todo-input'
                 type="text"
                 placeholder='Add new todo'
                 value={newTodo} onChange={e => setNewTodo(e.target.value)} />
-            <button>Add</button>
+            <button className='add-button'>+</button>
         </form>
     )
 }
