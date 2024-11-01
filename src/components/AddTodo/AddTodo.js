@@ -5,7 +5,8 @@ const  AddTodo = ({todos, setTodos}) => {
     const [newTodo, setNewTodo] = useState("");
     const handleSubmit = e => {
         e.preventDefault();
-        setTodos([...todos, {value: newTodo, id: crypto.randomUUID(), completed: false}]);
+        if(!newTodo.trim()) return;
+        setTodos([...todos, {value: newTodo.trim(), id: crypto.randomUUID(), completed: false}]);
         setNewTodo("");
     }
     return (
