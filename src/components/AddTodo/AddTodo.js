@@ -1,18 +1,25 @@
 import { useState } from 'react';
+import './AddTodo.css';
 
 const  AddTodo = ({todos, setTodos}) => {
     const [newTodo, setNewTodo] = useState("");
     const handleSubmit = e => {
         e.preventDefault();
-        setTodos([...todos, {value: newTodo, id: crypto.randomUUID(), completed: false}]);
+        if(!newTodo.trim()) return;
+        setTodos([...todos, {value: newTodo.trim(), id: crypto.randomUUID(), completed: false}]);
         setNewTodo("");
     }
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="new-todo">Add todo</label>
-            <input id="new-todo" type="text"
+            <div>
+                <label className="new-todo-label" htmlFor="new-todo">Add todo</label>
+            </div>
+            <input id="new-todo"
+                className='new-todo-input'
+                type="text"
+                placeholder='Add new todo'
                 value={newTodo} onChange={e => setNewTodo(e.target.value)} />
-            <button>Add</button>
+            <button className='add-button'>+</button>
         </form>
     )
 }

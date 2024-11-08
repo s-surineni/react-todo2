@@ -7,8 +7,8 @@ function App() {
   const [todos, setTodos] = useState([]);
   return (
     <>
-      {todos.map(todo => <TodoValue key={todo.id} todo={todo} todos={todos} setTodos={setTodos}/>)}
       <AddTodo todos={todos} setTodos={setTodos} />
+      {todos.map(todo => <TodoValue key={todo.id} todo={todo} todos={todos} setTodos={setTodos}/>)}
     </>
   );
 }
