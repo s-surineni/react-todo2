@@ -4,3 +4,10 @@ export function createTodo(todo) {
         todo
     }
 }
+
+export function toggleCompleted(todo) {
+    return {
+        type: "TOGGLE_COMPLETED",
+        todo
+    }
+}

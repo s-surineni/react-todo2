@@ -1,17 +1,13 @@
 import './TodoValues.css';
+import { useDispatch } from 'react-redux';
+import { toggleCompleted } from '../../redux/actions/todoActions';
+
 const TodoValue = ({todo}) => {
-    // const markCompleted = () => {
-    //     setTodos(todos.map(t => {
-    //         if (t.id === todo.id) {
-    //             return {...t, completed: !t.completed}
-    //         }
-    //         return t
-    //     }))
-    // }
+    const dispatch = useDispatch();
+
     return (
         <div className='todo-item'>
-            {/* <input type="checkbox" onChange={() => markCompleted()} /> */}
-            <input type="checkbox" />
+            <input type="checkbox" onChange={() => dispatch(toggleCompleted(todo))} />
 
             <div className={`todo-text ${todo.completed ? "completed" : ''}`}>{todo.value}</div>
             <button className='delete-todo'>x</button>
