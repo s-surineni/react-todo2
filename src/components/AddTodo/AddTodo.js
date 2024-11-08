@@ -1,12 +1,17 @@
 import { useState } from 'react';
 import './AddTodo.css';
+import { useDispatch } from 'react-redux';
+import { createTodo } from '../../redux/actions/todoActions';
 
-const  AddTodo = ({todos, setTodos}) => {
+const  AddTodo = () => {
+    const dispatch = useDispatch();
+    // const todos = useSelector(state => state.todos);
     const [newTodo, setNewTodo] = useState("");
     const handleSubmit = e => {
         e.preventDefault();
         if(!newTodo.trim()) return;
-        setTodos([...todos, {value: newTodo.trim(), id: crypto.randomUUID(), completed: false}]);
+        // setTodos([...todos, {value: newTodo.trim(), id: crypto.randomUUID(), completed: false}]);
+        dispatch(createTodo({value: newTodo.trim(), id: crypto.randomUUID(), completed: false}));
         setNewTodo("");
     }
     return (
