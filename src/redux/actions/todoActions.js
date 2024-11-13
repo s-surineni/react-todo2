@@ -11,3 +11,13 @@ export function toggleCompleted(todo) {
         todo
     }
 }
+
+export function loadTodos() {
+    return function(dispatch) {
+        return todoApi.getTodos().then(todos => {
+            dispatch({
+                loadTodosSuccess(todos)
+            })
+        })
+    }
+}
