@@ -10,6 +10,8 @@ export default function todoReducer(state = [], action) {
                 }
                 return t
         })
+        case "LOAD_TODOS_SUCCESS":
+            return action.todos
         default:
             return state
     }
